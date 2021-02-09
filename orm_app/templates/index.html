@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Django Model Form</title>
+</head>
+<body>
+	<h1>Welcome to django Model Form!</h1>
+	<a href="/orm/rec">Go to Rec Page</a><br>
+	<a href="/orm/can">Go to Candidate Page</a>
+	{% for r in rec %}
+
+	<p>{{r.name}}</p>
+	<a href="/orm/rec/{{r.id}}">View Detial</a>
+
+	{% endfor %}
+
+	<h1>Candidates</h1>
+	{% for c in can %}
+	<p>{{c.name}}</p>
+
+	{% endfor %}
+	
+
+</body>
+</html>
