@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% block body_block %}
+<!--Page Title-->
+<section class="page-title pad" style="background-image:url('https://i.imgur.com/DZyLzfV.png');">
+    <div class="auto-container">
+        <span class="float-text">Sign Up</span>
+        <h1>Sign Up</h1>
+        <ul class="bread-crumb clearfix">
+            <li><a href="/">Home </a></li>
+            <li>Sign Up</li>
+        </ul>
+    </div>
+</section>
+
+<!--Sign Up Section-->
+    <section class="sign-up-section">
+        <div class="auto-container">
+            <div class="sign-up-form">
+                <div class="row clearfix">
+                    <div class="form-column order-12 col-lg-6 col-md-12 col-sm-12">                    
+                        <div class="inner-column">
+                            <div class="title-box">
+                                <h3>Create account</h3>
+                            </div>
+                            {% for message in messages %}
+                            <h5 style="color: red">*{{message}}*</h5>
+                            {% endfor %}
+
+                            <!--Login Form-->
+                            <form action="." method="POST">
+                            	{% csrf_token %}
+                            	<div class="form-group">
+           
+                            	  <input type="text" class="form-control" name="username" id="id_username" placeholder="Enter Username" required>
+                            	</div>
+                            	<div class="form-group">
+               
+                            	  <input type="text" class="form-control" name="first_name" id="id_first_name" placeholder="First Name" required>
+                            	</div>
+                            	<div class="form-group">
+             
+                            	  <input type="text" class="form-control" name="last_name" id="id_last_name" placeholder="Last Name" required>
+                            	</div>
+                            	<div class="form-group">
+     
+                            	  <input type="email" class="form-control" name="email" id="id_email" placeholder="Email" required>
+                            	</div>
+                            	<div class="form-group">
+            
+                            	  <input type="password" class="form-control" name="password1" id="id_password1" placeholder="Password" required>
+                            	</div>
+                            	<div class="form-group">
+                        
+                            	  <input type="password" class="form-control" name="password2" id="id_password2" placeholder="Enter Password Again" required>
+                            	</div>
+                            	<button type="submit" class="theme-btn btn-style-three">Submit</button>
+                            
+                            </form>
+
+                            
+                        </div>
+
+                    <center>
+                        <div class="form-group">
+                            <a href="/accounts/login/">Already an User?</a>&nbsp;&nbsp;
+                            <a href="/accounts/login/" class="theme-btn btn-style-five">Sign In </a>
+                        </div> 
+                    </center>
+
+
+
+                    </div>
+
+                    <div class="image-column col-lg-3 col-sm-12 col-sm-12">
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Django Model Form</title>
+</head>
+<body>
+	<h1>Recruiter Form</h1>
+	<form enctype="multipart/form-data" action="." method="POST">
+		{% csrf_token %}
+		<input type="text" name="city" placeholder="City"><br>
+		<input type="number" name="contact_number" placeholder="Contact Number"><br>
+		<input type="file" name="image"><br>
+		<input type="submit" >
+		
+	</form>
+	
+
+</body>
+</html>

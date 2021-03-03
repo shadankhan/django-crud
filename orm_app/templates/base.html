@@ -1,0 +1,201 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>OLX | Buy/Sell Iphone Only</title>
+<!-- Stylesheets -->
+<link href="{% static 'css/bootstrap.css'%}" rel="stylesheet">
+<link href="{% static 'css/style.css'%}" rel="stylesheet">
+<link href="{% static 'css/responsive.css'%}" rel="stylesheet">
+<script src="https://kit.fontawesome.com/c61db9ea18.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<link rel="shortcut icon" href="{% static 'images/logo.png'%}" type="image/x-icon">
+<link rel="icon" href="{% static 'images/logo.png'%}" type="image/x-icon">
+
+<!-- Responsive -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+<link rel="stylesheet" href="{% static 'css/app.css'%}">
+<!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+<!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+<style type="text/css">
+            .schome {
+            background-image: url("{% static 'images/background/bg-parallax-02-1894x1950.jpg'%}");       
+            /*background-color:#ffc7e9;*/
+            background-size: cover;
+            background-position: center; 
+            padding-bottom: 200px;
+
+        }
+
+
+        body,
+        html {
+            width: 100%;
+            height: 100%;
+            font-family: "Lato";
+            color: white;
+        }
+
+        h1 {
+            font-weight: 700;
+            font-size: 5em;
+        }
+       
+
+
+        .content{
+            padding-top: 20%;
+            text-align: center;
+            text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+                         0px 8px 13px rgba(0,0,0,0.1),
+                         0px 18px 23px rgba(0,0,0,0.1);
+        }
+
+        hr{
+            width: 400px;
+            border-top: 1px solid #f8f8f8;
+            border-bottom: 1px solid rgba(0,0,0,0.2);
+        }
+        
+        </style>
+</head>
+
+<body>
+
+<div class="page-wrapper">
+    
+    <!-- Preloader -->
+    <div class="preloader"></div>
+    
+    <!-- Main Header-->
+    <header class="main-header">
+        <!--Header-Upper-->
+        <div class="header-upper">
+            <div class="outer-container">
+                <div class="clearfix">
+                    <div class="col-lg-7">
+                    <div class="pull-left logo-box">
+                        <div class="logo"><a href="/"><img src="{{STATIC_URL}}images/logo.png" alt="" title=""></a></div>
+                    </div>
+                    </div>
+                    <div class="nav-outer clearfix">
+                    
+                        <!-- Main Menu -->
+                        <nav class="main-menu navbar-expand-md">
+                            <div class="navbar-header">
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                            </div>
+                            <div class="navbar-collapse collapse scroll-nav clearfix" id="navbarSupportedContent">
+                            	<ul class="navigation clearfix">
+							        <li class="nav-item">
+							          <a class="nav-link active" aria-current="page" href="/">Home</a>
+							        </li>
+							        {% if user.is_authenticated %}
+							        <li class="nav-item">
+							          <a class="nav-link" href="/orm/all_ads">All Ads</a>
+							        </li>
+							        <li class="nav-item">
+							          <a class="nav-link" href="/orm/post">Post Ads</a>
+							        </li>
+							        <li class="nav-item">
+							          <a class="nav-link" href="/accounts/logout">Logout</a>
+							        </li>
+							        {% else %}
+							        <li class="nav-item">
+							          <a class="nav-link" href="/orm/post">Post Ads</a>
+							        </li>
+							        <li class="nav-item">
+							          <a class="nav-link" href="/accounts/register">Sign Up</a>
+							        </li>
+							        <li class="nav-item">
+							          <a class="nav-link" href="/accounts/login">Sign In</a>
+							        </li>
+							        {% endif %}
+							        
+							      </ul>
+                                
+                            </div>
+                        </nav>
+                        
+                        <!-- btn bo -->
+
+                    </div>
+                    <!--Outer Box-->
+                    <div class="outer-box">
+                        <!-- Nav Toggler -->
+                        <!-- <div class="nav-toggler">
+                            <button class="nav-btn"><span class="icon flaticon-arrows"></span></button>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--End Header Upper-->
+    </header>
+
+	{% block body_block %}
+
+	{% endblock %}
+
+    <!-- Main Footer -->
+    <div class="main-footer">    
+        <div class="anim-icons">
+            <span class="icon icon-twist-line-1 wow zoomIn"></span>
+            <span class="icon icon-circle-6 wow zoomIn" data-wow-delay="400ms"></span>
+            <span class="icon icon-twist-line-2 wow zoomIn" data-wow-delay="800ms"></span>
+            <span class="icon icon-circle-8 wow zoomIn" data-wow-delay="1200ms"></span>
+        </div>
+        <div class="auto-container">
+           
+
+            <!-- Social Links -->
+            <div class="social-links">
+                <ul>
+                    <li><a href="https://www.facebook.com/Totalk-2313709038845362/"><span class="fab fa-facebook-f"></span></a></li>
+                    <li><a href="http://instagram.com/totalk.co"><span class="fab fa-instagram"></span></a></li>
+                </ul>
+            </div>
+
+            <!-- Footer Nav -->
+            
+
+            <!-- Copyright -->
+            <div class="copyright">Copyright &copy; 2020. All Rights Reserved.</div>
+        </div>
+    </div>
+    <!-- End Footer -->
+    
+
+</div>
+<!--End pagewrapper-->
+
+<!--Scroll to top-->
+<div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-double-up"></span></div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="{% static 'js/jquery.js'%}"></script>
+<script src="{% static 'js/popper.min.js'%}"></script>
+<script src="{% static 'js/bootstrap.min.js'%}"></script>
+<script src="{% static 'js/jquery-ui.js'%}"></script>
+<script src="{% static 'js/jquery.mCustomScrollbar.concat.min.js'%}"></script>
+<script src="{% static 'js/jquery.fancybox.js'%}"></script>
+<script src="{% static 'js/appear.js'%}"></script>
+<script src="{% static 'js/owl.js'%}"></script>
+<script src="{% static 'js/wow.js'%}"></script>
+<script src="{% static 'js/script.js'%}"></script>
+<!--Google Map APi Key-->
+<script src="https://maps.google.com/maps/api/js?key=AIzaSyDTPlX-43R1TpcQUyWjFgiSfL_BiGxslZU"></script>
+<script src="{% static 'js/map-script.js'%}"></script>
+<!--End Google Map APi-->
+</body>
+</html>
+
+

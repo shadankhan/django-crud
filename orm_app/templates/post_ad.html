@@ -1,0 +1,47 @@
+{% extends 'base.html'%}
+{% block body_block %}
+<section class="page-title pad" style="background-image:url('https://i.imgur.com/DZyLzfV.png');">
+        <div class="auto-container">
+            <span class="float-text">Sell Iphone</span>
+            <h1>Sell Iphone</h1>
+            <ul class="bread-crumb clearfix">
+                <li><a href="/">Home </a></li>
+                <li>Sell </li>
+            </ul>
+        </div>
+    </section>
+    <section class="sign-up-section">
+    <div class="auto-container">
+        <div class="sign-up-form">
+            <div class="row clearfix">
+                <div class="form-column order-10 col-lg-8 col-md-10 col-sm-10">                    
+                    <div class="inner-column">
+
+    	<form action="." enctype="multipart/form-data" method="POST">
+    		{%csrf_token %}
+    		<div class="form-group">
+    		  <label for="id_description" class="form-label">Why do you want to sell your Iphone:</label>
+    		  <textarea class="form-control" name="description" id="id_description" rows="3"></textarea>
+    		</div>
+    		<div class="form-group">
+    		  <label for="id_title" class="form-label">Iphone Model Name:</label>
+    		  <input type="text" class="form-control" name="title" id="id_title" placeholder="Iphone Model Name" required>
+    		</div>
+    		<div class="form-group">
+    		  <label for="id_price" class="form-label">Price:</label>
+    		  <input type="number" class="form-control" name="price" id="id_price" placeholder="Price" required>
+    		</div>
+    		<div >
+    		  <input type="file" class="form-control" name="image" required>
+    		</div><br>
+    		
+    		<button type="submit" class="theme-btn btn-style-three">Submit</button>
+    	</form>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+   </section>
+
+{% endblock %}

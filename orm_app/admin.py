@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Recruiter, Candidate
+from .models import Profile, Post_ad
 # Register your models here.
-admin.site.register(Recruiter)
-admin.site.register(Candidate)
+admin.site.register(Profile)
+admin.site.register(Post_ad)

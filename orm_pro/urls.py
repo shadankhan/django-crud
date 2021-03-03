@@ -16,9 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from orm_app import views
+import debug_toolbar
+from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index , name="index"),
-    path('orm/', include('orm_app.urls'))
+    path('orm/', include('orm_app.urls')),
+    path('accounts/', include('accounts.urls')),
+    path('api-auth/', include('rest_framework.urls')),
+    path('__debug__/', include(debug_toolbar.urls)),
 ]

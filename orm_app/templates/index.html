@@ -1,25 +1,68 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Django Model Form</title>
-</head>
-<body>
-	<h1>Welcome to django Model Form!</h1>
-	<a href="/orm/rec">Go to Rec Page</a><br>
-	<a href="/orm/can">Go to Candidate Page</a>
-	{% for r in rec %}
+{% extends 'base.html' %}
+{% block body_block %}
+<section class="schome">
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="content">
+                <h1 style="font-size:6vw;">Sell & Buy Iphone</h1>
+                <h3>India's First Dedicated Platform For Selling And Buying Iphone.</h3><br>
+                <button onclick="window.location.href = '/accounts/register/';" class="theme-btn btn-style-three"><i class="fas fa-quote-left"></i> Get Started!</button>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
 
-	<p>{{r.name}}</p>
-	<a href="/orm/rec/{{r.id}}">View Detial</a>
+<section id="gallery">
+    <span class="float-text">Your Ads</span><br><br>
+    
+   <div class="auto-container mt-4">
+   
 
-	{% endfor %}
+   	<br>
+        <div class="row">
 
-	<h1>Candidates</h1>
-	{% for c in can %}
-	<p>{{c.name}}</p>
 
-	{% endfor %}
-	
+            {% for i in ads %}
 
-</body>
-</html>
+            <div class="col-lg-4 mb-4">
+                <div class="card">
+
+                    <div class="pl-3 m-2">
+                    <img src="/{{i.profile.image}}" alt="user-profile-image" class="rounded-circle" style="width: 50px;height: 50px;"><span style="color:black;">&nbsp;&nbsp;{{i.profile.user.first_name}}&nbsp;{{i.profile.user.last_name}}</span>&nbsp;&nbsp;
+                    <span class="badge bg-secondary" style="color:white">{{i.price}}</span> 
+                    </div>
+                   
+                    
+
+                    <div class="card-body">
+                        <div>
+                        <p style="color:grey;">{{i.title}}</p>
+                        <p style="color:grey;">{{i.description}}</p> 
+                        <img src="/{{i.image}}">
+                        <center>
+                        <p><span class="badge bg-secondary" style="color:white;">{{i.pub_date}}</span> 
+                           </p> 
+
+                        </div>
+                       	<br>                  
+                        </center>
+                        <div  align="center">
+                            <button onclick="location.href='/totalk/inv/{{i.id}}';" type="button" class="theme-btn btn-style-three"><i class="fas fa-eye"></i> View Detail</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            {% endfor %}
+           
+            
+        </div>
+        <br>
+        <br>
+
+   </div>
+</section>
+
+{% endblock %}
